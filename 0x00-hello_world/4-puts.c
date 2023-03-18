@@ -1,2 +1,3 @@
 #!/bin/bash
-puts "Programming is like building a multilingual puzzle" ; exit 0
+echo "Programming is like building a multilingual puzzle" | puts
+exit 0
