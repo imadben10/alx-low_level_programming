@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "main.h"
-/* This pprints _putchar followed by a new line */
+/**
+* main - Entry point
+* Description: the putchar() function to output the string "_putchar"
+*followed by a newline character 
+*/
 int main(void)
 {
 /* Output each character in the string "_putchar" using putchar()*/
