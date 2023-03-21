@@ -3,7 +3,7 @@
 /**
 * main - Entry point
 * Description: the putchar() function to output the string "_putchar"
-*followed by a newline character 
+* followed by a newline character 
 */
 int main(void)
 {
