@@ -2,8 +2,7 @@
 #include "main.h"
 /**
 * main - Entry point
-* Description: the putchar() function to output the string "_putchar"
-* followed by a newline character 
+* Description: the putchar() function to output the string "_putchar" followed by a newline character 
 */
 int main(void)
 {
