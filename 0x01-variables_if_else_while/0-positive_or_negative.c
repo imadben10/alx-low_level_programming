@@ -3,7 +3,7 @@
 #include <time.h>
 /**
 * main - Entry point
-* Description: Assigns number to n and prints whether positive, negative, or zero
+* Description: Assign nr to n and prints whether positive, negative, or zero
 * Return: Always 0 (Success)
 */
 int main(void)
