@@ -1,41 +1,35 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
-* argstostr - concatenates all the arguments of a program
-* @ac: the number of arguments
-* @av: the array of arguments
-* Return: a pointer to the concatenated string
+* argstostr - concatenates all the arguments of your program.
+* @ac: argument count.
+* @av: pointer to array of size ac containing arguments.
+* Return: pointer to a new string containing all the arguments, separated by
+* a newline character ('\n'), or NULL if ac == 0, av == NULL or malloc
+*fails.
 */
 char *argstostr(int ac, char **av)
 {
-char *str;
-int i, j, len = 0, pos = 0;
-/* Return NULL if ac == 0 or av == NULL */
+int i, j, size = 0;
+char *s;
 if (ac == 0 || av == NULL)
 return (NULL);
-/* Calculate the total length of the arguments */
 for (i = 0; i < ac; i++)
 {
-for (j = 0; av[i][j]; j++)
-{
-len++;
+for (j = 0; av[i][j] != '\0'; j++)
+size++;
+size++; /* account for newline character */
 }
-len++; /* Add 1 for the new line character */
-}
-/* Allocate memory for the concatenated string */
-str = malloc(sizeof(char) * len);
-if (str == NULL)
+size++; /* account for terminating null character */
+s = malloc((size + ac) * sizeof(char));
+if (s == NULL)
 return (NULL);
-/* Copy the arguments into the concatenated string */
-for (i = 0; i < ac; i++)
+for (i = 0, j = 0; i < ac; i++)
 {
-for (j = 0; av[i][j]; j++)
-{
-str[pos++] = av[i][j];
+while (*av[i])
+s[j++] = *av[i]++;
+s[j++] = '\n';
 }
-str[pos++] = '\n';
-}
-str[pos] = '\0'; /* Terminate the string with a null byte */
-return (str);
+s[j++] = '\0';
+return (s);
 }
