@@ -6,14 +6,18 @@ section .text
 
     extern printf
 
-    print_hello_msg:
-        push hello
-        call printf
-        add rsp, 8
-        ret
-
 main:
-    call print_hello_msg
+    push rbp
+    mov rbp, rsp
+    
+    sub rsp, 16        ; allocate space for 2 stack slots
+    
+    mov edi, hello     ; prepare first argument for printf
+    mov eax, 0         ; clear RAX register
+    call printf        ; call printf function
+    
+    add rsp, 16        ; free up the stack space
+    mov eax, 0         ; return 0
 
-    mov eax, 0
-    ret
+    leave              ; restore RBP register
+    ret                ; return to OS
