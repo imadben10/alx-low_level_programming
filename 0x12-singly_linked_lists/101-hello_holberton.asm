@@ -1,6 +1,5 @@
 section .data
-    hello db 'Hello, Holberton', 0
-    fmt db '%s', 10, 0
+    hello db "Hello, Holberton",10,0
 
 section .text
     global main
@@ -8,14 +7,9 @@ section .text
     extern printf
 
 main:
-    push rbp
-    mov rbp, rsp
-
     push hello
-    push fmt
     call printf
-    add rsp, 16
+    add rsp, 8
 
     mov eax, 0
-    leave
     ret
