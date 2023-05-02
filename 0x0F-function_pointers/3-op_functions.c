@@ -1,51 +1,75 @@
 #include "3-calc.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
-* op_add - Adds two integers
-* @a: First integer
-* @b: Second integer
-* Return: Result of the sum
-*/
+ * op_add - Adds two integers
+ * @a: The first integer
+ * @b: The second integer
+ *
+ * Return: The result of the addition
+ */
 int op_add(int a, int b)
 {
-return (a + b);
+	return (a + b);
 }
+
 /**
-* op_sub - Subtracts two integers
-* @a: First integer
-* @b: Second integer
-* Return: Result of the difference
-*/
+ * op_sub - Subtracts two integers
+ * @a: The first integer
+ * @b: The second integer
+ *
+ * Return: The result of the subtraction
+ */
 int op_sub(int a, int b)
 {
-return (a - b);
+	return (a - b);
 }
+
 /**
-* op_mul - Multiplies two integers
-* @a: First integer
-* @b: Second integer
-* Return: Result of the product
-*/
+ * op_mul - Multiplies two integers
+ * @a: The first integer
+ * @b: The second integer
+ *
+ * Return: The result of the multiplication
+ */
 int op_mul(int a, int b)
 {
-return (a * b);
+	return (a * b);
 }
+
 /**
-* op_div - Divides two integers
-* @a: First integer
-* @b: Second integer
-* Return: Result of the division
-*/
+ * op_div - Divides two integers
+ * @a: The first integer
+ * @b: The second integer
+ *
+ * Return: The result of the division
+ */
 int op_div(int a, int b)
 {
-return (a / b);
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	return (a / b);
 }
+
 /**
-* op_mod - Modulus two integers
-* @a: First integer
-* @b: Second integer
-* Return: Result of the modulus operation
-*/
+ * op_mod - Computes the modulo of two integers
+ * @a: The first integer
+ * @b: The second integer
+ *
+ * Return: The result of the modulo
+ */
 int op_mod(int a, int b)
 {
-return (a % b);
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	return (a % b);
 }
