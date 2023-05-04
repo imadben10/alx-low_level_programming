@@ -4,9 +4,7 @@
 /**
  * get_op_func - selects the correct function to perform the operation
  * asked by the user.
- *
  * @s: The operator passed as argument to the program.
- *
  * Return: A pointer to the function that corresponds to the operator
  * given as a parameter. NULL if the operator is not valid.
  */
